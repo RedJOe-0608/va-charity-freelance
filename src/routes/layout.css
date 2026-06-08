@@ -1,0 +1,197 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@plugin '@tailwindcss/typography';
+
+/* ==========================================================================
+   Design tokens — Vijay Anand Foundation
+   Palette derived from the logo: teal-green heart + vivid green highlight
+   + deep navy wordmark, on a soft cool-tinted off-white.
+   Edit the raw values in :root; everything else references them.
+   ========================================================================== */
+
+:root {
+	/* Radii */
+	--radius: 0.75rem;
+
+	/* Brand — teal from the logo heart */
+	--primary: #0e8c80; /* logo teal-green */
+	--primary-hover: #0b7065;
+	--primary-foreground: #ffffff;
+	--primary-bright: #29bdab; /* lighter teal — brand accents on dark (navy) sections */
+
+	/* Accent — vivid green highlight from the logo (replaces the old gold).
+	   Paired with deep-navy text so it stays crisp and readable. */
+	--accent: #16c25c; /* logo green */
+	--accent-hover: #12a94f;
+	--accent-foreground: #053062; /* logo navy */
+
+	/* Surfaces */
+	--background: #f7faf9; /* cool off-white */
+	--foreground: #14211f; /* near-black, faintly teal */
+	--card: #ffffff;
+	--card-foreground: #14211f;
+
+	/* Muted / secondary */
+	--muted: #eef3f1; /* cool sand */
+	--muted-foreground: #5d6b67; /* secondary text */
+	--secondary: #e6f5ee; /* pale green tint */
+	--secondary-foreground: #0e8c80;
+
+	/* Lines & focus */
+	--border: #e1e9e5;
+	--input: #e1e9e5;
+	--ring: #0e8c80;
+
+	/* Decorative deep section (footer / hero / partner strip) — logo navy */
+	--brand-deep: #06265c;
+	--brand-deep-foreground: #e7eefb;
+
+	/* Typography */
+	--font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+	--font-display:
+		'Fraunces', 'Georgia', 'Times New Roman', serif;
+}
+
+@theme inline {
+	/* Radii */
+	--radius-sm: calc(var(--radius) - 4px);
+	--radius-md: calc(var(--radius) - 2px);
+	--radius-lg: var(--radius);
+	--radius-xl: calc(var(--radius) + 6px);
+	--radius-2xl: calc(var(--radius) + 14px);
+
+	/* Colors → generate bg-*, text-*, border-*, ring-* utilities */
+	--color-background: var(--background);
+	--color-foreground: var(--foreground);
+	--color-card: var(--card);
+	--color-card-foreground: var(--card-foreground);
+
+	--color-primary: var(--primary);
+	--color-primary-hover: var(--primary-hover);
+	--color-primary-foreground: var(--primary-foreground);
+	--color-primary-bright: var(--primary-bright);
+
+	--color-accent: var(--accent);
+	--color-accent-hover: var(--accent-hover);
+	--color-accent-foreground: var(--accent-foreground);
+
+	--color-muted: var(--muted);
+	--color-muted-foreground: var(--muted-foreground);
+	--color-secondary: var(--secondary);
+	--color-secondary-foreground: var(--secondary-foreground);
+
+	--color-border: var(--border);
+	--color-input: var(--input);
+	--color-ring: var(--ring);
+
+	--color-brand-deep: var(--brand-deep);
+	--color-brand-deep-foreground: var(--brand-deep-foreground);
+
+	/* Fonts */
+	--font-sans: var(--font-sans);
+	--font-display: var(--font-display);
+
+	/* Shadows — soft, professional */
+	--shadow-soft: 0 1px 2px rgba(16, 24, 40, 0.04), 0 4px 16px rgba(16, 24, 40, 0.06);
+	--shadow-card: 0 1px 3px rgba(16, 24, 40, 0.06), 0 8px 28px rgba(16, 24, 40, 0.08);
+	--shadow-lift: 0 12px 40px rgba(12, 64, 59, 0.16);
+
+	/* Section rhythm */
+	--spacing-section: 6rem;
+}
+
+@layer base {
+	* {
+		border-color: var(--border);
+	}
+
+	html {
+		scroll-behavior: smooth;
+	}
+
+	body {
+		background-color: var(--background);
+		color: var(--foreground);
+		font-family: var(--font-sans);
+		-webkit-font-smoothing: antialiased;
+		text-rendering: optimizeLegibility;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4 {
+		font-family: var(--font-display);
+		font-weight: 600;
+		letter-spacing: -0.02em;
+		/* inherit the section's text color so headings stay readable on dark
+		   bands (e.g. the navy hero) instead of being forced to dark foreground */
+		color: inherit;
+		/* balance line lengths so a heading never drops a lone word to its own line */
+		text-wrap: balance;
+	}
+
+	p {
+		/* avoid single-word "orphan" last lines in body copy */
+		text-wrap: pretty;
+	}
+
+	::selection {
+		background-color: color-mix(in oklab, var(--primary) 22%, transparent);
+	}
+}
+
+/* bits-ui Accordion open/close animations */
+@keyframes accordion-down {
+	from {
+		height: 0;
+	}
+	to {
+		height: var(--bits-accordion-content-height);
+	}
+}
+
+@keyframes accordion-up {
+	from {
+		height: var(--bits-accordion-content-height);
+	}
+	to {
+		height: 0;
+	}
+}
+
+@utility animate-accordion-down {
+	animation: accordion-down 0.2s ease-out;
+}
+
+@utility animate-accordion-up {
+	animation: accordion-up 0.2s ease-out;
+}
+
+/* Reveal-on-scroll helper (progressive enhancement) */
+@layer utilities {
+	.reveal {
+		opacity: 0;
+		transform: translateY(16px);
+		transition:
+			opacity 0.6s ease,
+			transform 0.6s ease;
+	}
+
+	.reveal.is-visible {
+		opacity: 1;
+		transform: none;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.reveal {
+			opacity: 1;
+			transform: none;
+			transition: none;
+		}
+
+		html {
+			scroll-behavior: auto;
+		}
+	}
+}
