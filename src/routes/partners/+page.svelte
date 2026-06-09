@@ -89,14 +89,6 @@
 									<p class="font-display text-base leading-tight font-semibold">{org.name}</p>
 								</div>
 
-								<!-- Hero: grant amount -->
-								<div class="mt-5">
-									<p class="font-display text-4xl font-semibold tracking-tight text-primary">{org.grant}</p>
-									<p class="mt-1 text-[11px] font-medium tracking-[0.14em] text-muted-foreground uppercase">
-										Grant given
-									</p>
-								</div>
-
 								<!-- Description -->
 								<p class="mt-4 text-sm leading-relaxed text-muted-foreground">{org.description}</p>
 

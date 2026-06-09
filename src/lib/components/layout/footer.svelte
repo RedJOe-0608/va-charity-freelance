@@ -1,5 +1,5 @@
 <script>
-	import { Heart, Mail, Phone, MapPin, Camera, Globe, Briefcase, Video, ArrowRight } from '@lucide/svelte';
+	import { Heart, Mail, MapPin, Camera, Globe, Briefcase, Video, ArrowRight, ArrowUpRight } from '@lucide/svelte';
 	import { Button } from '$lib/components/ui/button/index.js';
 	import { site, navLinks } from '$lib/data/site.js';
 
@@ -36,18 +36,6 @@
 					<span>
 						<span class="block text-sm text-brand-deep-foreground/60">Email us</span>
 						<span class="font-medium">{site.email}</span>
-					</span>
-				</a>
-				<a
-					href={`tel:${site.phone.replace(/[^+\d]/g, '')}`}
-					class="flex items-center gap-4 rounded-xl bg-white/5 p-4 transition-colors hover:bg-white/10"
-				>
-					<span class="grid size-11 shrink-0 place-items-center rounded-full bg-primary-bright/15 text-primary-bright">
-						<Phone class="size-5" />
-					</span>
-					<span>
-						<span class="block text-sm text-brand-deep-foreground/60">Call us</span>
-						<span class="font-medium">{site.phone}</span>
 					</span>
 				</a>
 				<div class="flex items-center gap-4 rounded-xl bg-white/5 p-4">
@@ -101,13 +89,16 @@
 		</div>
 
 		<div class="flex flex-col gap-3">
-			<h3 class="font-display text-sm font-semibold tracking-wide text-brand-deep-foreground/90 uppercase">
-				Get involved
-			</h3>
-			<a href="/contact" class="text-sm text-brand-deep-foreground/65 transition-colors hover:text-primary-bright">Donate</a>
-			<a href="/contact" class="text-sm text-brand-deep-foreground/65 transition-colors hover:text-primary-bright">Volunteer</a>
-			<a href="/partners" class="text-sm text-brand-deep-foreground/65 transition-colors hover:text-primary-bright">Partner with us</a>
-			<a href="/contact" class="text-sm text-brand-deep-foreground/65 transition-colors hover:text-primary-bright">Contact</a>
+			<a
+				href="/contact"
+				aria-label="Go to contact page"
+				class="group/contact flex w-fit items-center gap-2 font-display text-sm font-semibold tracking-wide text-brand-deep-foreground/90 uppercase transition-colors hover:text-primary-bright"
+			>
+				Contact us
+				<ArrowUpRight class="size-4 text-brand-deep-foreground/60 transition-colors group-hover/contact:text-primary-bright" />
+			</a>
+			<a href={`mailto:${site.email}`} class="text-sm text-brand-deep-foreground/65 transition-colors hover:text-primary-bright">{site.email}</a>
+			<p class="text-sm text-brand-deep-foreground/65">{site.address}</p>
 		</div>
 	</div>
 
@@ -116,7 +107,7 @@
 			class="mx-auto flex max-w-6xl flex-col gap-2 px-5 py-6 text-sm text-brand-deep-foreground/55 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8"
 		>
 			<p>© {new Date().getFullYear()} {site.name}. All rights reserved.</p>
-			<p>{site.registration}</p>
+			<p>Registered charity no. {site.registration}</p>
 		</div>
 	</div>
 </footer>

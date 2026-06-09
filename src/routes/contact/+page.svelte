@@ -1,6 +1,6 @@
 <script>
 	import { Accordion } from 'bits-ui';
-	import { Mail, Phone, MapPin, ChevronDown, Check } from '@lucide/svelte';
+	import { Mail, MapPin, ChevronDown, Check } from '@lucide/svelte';
 	import PageHeader from '$lib/components/ui/page-header.svelte';
 	import { Button } from '$lib/components/ui/button/index.js';
 	import { reveal } from '$lib/actions/reveal.js';
@@ -17,7 +17,6 @@
 
 	const details = [
 		{ icon: Mail, label: 'Email', value: site.email, href: `mailto:${site.email}` },
-		{ icon: Phone, label: 'Phone', value: site.phone, href: `tel:${site.phone.replace(/[^+\d]/g, '')}` },
 		{ icon: MapPin, label: 'Office', value: site.address, href: null }
 	];
 

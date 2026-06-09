@@ -5,10 +5,9 @@ export const site = {
 	tagline: 'Empowering communities through education & healthcare',
 	mission:
 		'We partner with local communities to break the cycle of poverty — funding schools, clinics, and the people who make lasting change possible.',
-	email: 'hello@vijayanandfoundation.org',
-	phone: '+1 (415) 555-0142',
-	address: '128 Community Way, Suite 200, San Francisco, CA 94103',
-	registration: 'Registered charity · No. 84-7290153',
+	email: 'anand@avnan.com',
+	address: '2408 Jarvis Street, Mississauga L5C 2P6',
+	registration: '89457 6958 RR0001',
 	social: [
 		{ label: 'Instagram', href: 'https://instagram.com', icon: 'instagram' },
 		{ label: 'Facebook', href: 'https://facebook.com', icon: 'facebook' },
@@ -27,10 +26,10 @@ export const navLinks = [
 ];
 
 export const stats = [
-	{ value: '52K+', label: 'Lives impacted' },
-	{ value: '$14.6M', label: 'Funds deployed' },
-	{ value: '38', label: 'Partner organizations' },
-	{ value: '17', label: 'Countries reached' }
+	{ value: '22K+', label: 'Lives reached' },
+	{ value: '$10M', label: 'Funds deployed' },
+	{ value: '12', label: 'Partner organizations' },
+	{ value: '3', label: 'Countries reached' }
 ];
 
 export const initiatives = [
@@ -82,7 +81,7 @@ export const founderStory = [
 		year: '1965 · Age 21',
 		title: 'A young engineer',
 		image:
-			'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1100&q=80',
+			'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=1100&q=80',
 		body: [
 			'Driven and academically gifted, Anand completed his graduate degree in Electrical Engineering at the young age of 21, in 1965 — setting the foundation for a lifelong career in engineering.'
 		]
@@ -137,76 +136,55 @@ export const values = [
 	}
 ];
 
-export const team = [
-	{
-		name: 'Dr. Amara Okafor',
-		role: 'Founder & Executive Director',
-		image: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=600&q=80'
-	},
-	{
-		name: 'Daniel Mercer',
-		role: 'Director of Programs',
-		image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80'
-	},
-	{
-		name: 'Priya Nair',
-		role: 'Head of Partnerships',
-		image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=600&q=80'
-	},
-	{
-		name: 'Marcus Lee',
-		role: 'Director of Finance',
-		image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=600&q=80'
-	}
+export const foundingDirectors = [
+	{ name: 'Anand Jain', role: 'Founding Director' },
+	{ name: 'Vijay Jain', role: 'Founding Director' },
+	{ name: 'Neeraj Jain', role: 'Founding Director' }
+];
+
+export const boardOfDirectors = [
+	{ name: 'Anuj Jain', role: 'Board Director' },
+	{ name: 'Nitin Jain', role: 'Board Director' },
+	{ name: 'Rakesh Gupta', role: 'Board Director' }
 ];
 
 export const milestones = [
-	{ year: '2011', title: 'Founded', body: 'Started with a single classroom and a clear belief in local leadership.' },
-	{ year: '2015', title: 'First clinic', body: 'Opened our first community health center, serving 4,000 people in year one.' },
-	{ year: '2019', title: 'Crossed borders', body: 'Expanded to 9 countries through a network of vetted local partners.' },
-	{ year: '2024', title: '50,000 lives', body: 'Reached a milestone of 50,000+ people supported across our programs.' }
+	{ year: '1995', title: 'Founded', body: 'The Vijay Anand Foundation was formed in Mississauga, Ontario to support charitable activities.' },
+	{ year: '2005', title: 'First major grant', body: 'Partnered with Operation Eyesight Universal to fund cataract operations in rural India.' },
+	{ year: '2015', title: 'Growing impact', body: 'Built a student hostel near Vrindavan through Aim for Seva, housing boys ages 10–18.' },
+	{ year: '2024', title: '22,000+ lives', body: 'Reached a milestone of 22,000+ people supported across our programs in 3 countries.' }
 ];
 
 export const stories = [
 	{
-		slug: 'leila',
-		name: 'Leila’s classroom',
-		location: 'Marrakech, Morocco',
+		slug: 'aim-for-seva',
+		name: 'Aim for Seva — Student Hostels',
+		location: 'Vrindavan, India',
+		category: 'Children',
+		excerpt:
+			'Building student hostels for boys aged 10–18 studying from primary education to high school. We made a large donation to build a student hostel near Vrindavan, costing approximately $220,000 plus support from friends and relatives.',
+		image:
+			'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1200&q=80'
+	},
+	{
+		slug: 'university-of-waterloo',
+		name: 'University of Waterloo — Entrepreneurship',
+		location: 'Waterloo, Canada',
 		category: 'Education',
 		excerpt:
-			'A scholarship turned into a teaching degree — now Leila runs the very school that gave her a start.',
+			'The $100,000 foundational gift was a beginning of entrepreneurship at the University of Waterloo, supporting the next generation of innovators and business leaders.',
 		image:
-			'https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=1200&q=80'
+			'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1200&q=80'
 	},
 	{
-		slug: 'riverside-clinic',
-		name: 'The riverside clinic',
-		location: 'Kisumu, Kenya',
+		slug: 'operation-eyesight',
+		name: 'Operation Eyesight Universal',
+		location: 'Calgary / India',
 		category: 'Healthcare',
 		excerpt:
-			'A mobile unit became a permanent clinic, cutting the nearest hospital trip from 40km to 4.',
+			'We started with Operation Eyesight Universal of Calgary doing cataract operations in villages of poor and old farmers in India, restoring sight and dignity to those who need it most.',
 		image:
-			'https://images.unsplash.com/photo-1631815589968-fdb09a223b1e?auto=format&fit=crop&w=1200&q=80'
-	},
-	{
-		slug: 'clean-water-village',
-		name: 'Water that stayed',
-		location: 'Rajasthan, India',
-		category: 'Clean Water',
-		excerpt:
-			'Three wells and a maintenance co-op mean this village hasn’t walked for water in five years.',
-		image:
-			'https://images.unsplash.com/photo-1538300342682-cf57afb97285?auto=format&fit=crop&w=1200&q=80'
-	},
-	{
-		slug: 'market-women',
-		name: 'The market collective',
-		location: 'Accra, Ghana',
-		category: 'Livelihoods',
-		excerpt:
-			'Twelve micro-grants seeded a cooperative that now employs forty women year-round.',
-		image:
-			'https://images.unsplash.com/photo-1604881991720-f91add269bed?auto=format&fit=crop&w=1200&q=80'
+			'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&q=80'
 	}
 ];
 
@@ -222,17 +200,22 @@ export const gallery = [
 	'https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&w=900&q=80'
 ];
 
-// `url` is the partner's homepage and `logo` is a monochrome image in /static/partners —
-// swap in real links and logo files as partners are confirmed.
+// `url` is the partner's homepage and `domain` is used to pull the org's real brand mark
+// (favicon) from the web for the marquee. Partners without a confirmed domain fall back to
+// a category icon based on `kind`.
 export const partners = [
-	{ name: 'Brightline', kind: 'Foundation', url: '#', logo: '/partners/brightline.svg' },
-	{ name: 'Meridian Health', kind: 'Healthcare', url: '#', logo: '/partners/meridian-health.svg' },
-	{ name: 'OpenLearn', kind: 'Education', url: '#', logo: '/partners/openlearn.svg' },
-	{ name: 'AquaPure', kind: 'Infrastructure', url: '#', logo: '/partners/aquapure.svg' },
-	{ name: 'Northwind Trust', kind: 'Foundation', url: '#', logo: '/partners/northwind-trust.svg' },
-	{ name: 'Verdant Co.', kind: 'Corporate', url: '#', logo: '/partners/verdant-co.svg' },
-	{ name: 'CareFirst', kind: 'Healthcare', url: '#', logo: '/partners/carefirst.svg' },
-	{ name: 'Summit Group', kind: 'Corporate', url: '#', logo: '/partners/summit-group.svg' }
+	{ name: 'University of Waterloo', kind: 'Education', url: 'https://uwaterloo.ca', domain: 'uwaterloo.ca' },
+	{ name: 'University of Toronto Mississauga', kind: 'Education', url: 'https://utm.utoronto.ca', domain: 'utoronto.ca' },
+	{ name: 'Sheridan College', kind: 'Education', url: 'https://sheridancollege.ca', domain: 'sheridancollege.ca' },
+	{ name: 'Aim For Seva', kind: 'Childcare', url: 'https://aimforseva.in', domain: 'aimforseva.in' },
+	{ name: 'Trillium Health Partners', kind: 'Healthcare', url: 'https://trilliumhealthpartners.ca', domain: 'trilliumhealthpartners.ca' },
+	{ name: 'Operation Eyesight Universal', kind: 'Healthcare', url: 'https://operationeyesight.com', domain: 'operationeyesight.com' },
+	{ name: 'Peel Learning Foundation', kind: 'Education', url: 'https://www.peellearningfoundation.org', domain: 'peellearningfoundation.org' },
+	{ name: 'Halton Learning Foundation', kind: 'Education', url: 'https://haltonlearningfoundation.ca', domain: 'haltonlearningfoundation.ca' },
+	{ name: 'Udayan Care', kind: 'Childcare', url: 'https://udayancare.org', domain: 'udayancare.org' },
+	{ name: 'Sai Dham Food Bank', kind: 'Childcare', url: 'https://saidhamfoodbank.com', domain: 'saidhamfoodbank.com' },
+	{ name: 'Canada Red Cross', kind: 'Healthcare', url: 'https://redcross.ca', domain: 'redcross.ca' },
+	{ name: 'Creating Hopes', kind: 'Healthcare', url: '#' }
 ];
 
 // Partners grouped by focus area (alternating left/right blocks of partner cards).
@@ -241,51 +224,34 @@ export const partnerCategories = [
 		key: 'education',
 		title: 'Education',
 		icon: 'graduation-cap',
-		subtitle: 'Opening doors to learning, one classroom at a time.',
+		subtitle: 'Opening doors to learning and entrepreneurship.',
 		image:
 			'https://images.unsplash.com/photo-1497486751825-1233686d5d80?auto=format&fit=crop&w=1100&q=80',
 		organizations: [
 			{
-				name: 'OpenLearn',
-				grant: '$1.8M',
-				url: 'https://openlearn.org',
-				description: 'Free digital classrooms and teacher training reaching students across six regions.'
+				name: 'University of Waterloo',
+				url: 'https://uwaterloo.ca',
+				description: 'A foundational gift supporting entrepreneurship programs and innovation at one of Canada\'s top universities.'
 			},
 			{
-				name: 'BrightFutures Academy',
-				grant: '$1.2M',
-				url: 'https://brightfutures.org',
-				description: 'Scholarships and mentoring that help first-generation students reach university.'
+				name: 'University of Toronto Mississauga',
+				url: 'https://utm.utoronto.ca',
+				description: 'Supporting educational programs and scholarships at UTM.'
 			},
 			{
-				name: 'ScholarBridge',
-				grant: '$940K',
-				url: 'https://scholarbridge.org',
-				description: 'Builds schools and supplies learning materials in underserved districts.'
+				name: 'Sheridan College',
+				url: 'https://sheridancollege.ca',
+				description: 'Partnering with Sheridan to expand access to quality education.'
 			},
 			{
-				name: 'EveryChild Reads',
-				grant: '$620K',
-				url: 'https://everychildreads.org',
-				description: 'Early-literacy programs bringing books and reading coaches to rural communities.'
+				name: 'Peel Learning Foundation',
+				url: '#',
+				description: 'Supporting educational opportunities for students in the Peel Region.'
 			},
 			{
-				name: 'Learning Tree Initiative',
-				grant: '$510K',
-				url: 'https://learningtree.org',
-				description: 'After-school STEM labs that spark curiosity and confidence in young learners.'
-			},
-			{
-				name: 'Future Scholars Fund',
-				grant: '$430K',
-				url: 'https://futurescholars.org',
-				description: 'Need-based grants covering tuition, uniforms, and exam fees for bright students.'
-			},
-			{
-				name: 'ClassroomConnect',
-				grant: '$280K',
-				url: 'https://classroomconnect.org',
-				description: 'Connects remote schools with internet access, devices, and online resources.'
+				name: 'Halton Learning Foundation',
+				url: '#',
+				description: 'Helping students in the Halton Region access the resources they need to succeed.'
 			}
 		]
 	},
@@ -298,40 +264,19 @@ export const partnerCategories = [
 			'https://images.unsplash.com/photo-1607453998774-d533f65dac99?auto=format&fit=crop&w=1100&q=80',
 		organizations: [
 			{
-				name: 'Little Steps Foundation',
-				grant: '$1.1M',
-				url: 'https://littlesteps.org',
-				description: 'Daycare and early-development centres so working families have safe care for their children.'
+				name: 'Aim For Seva',
+				url: 'https://aimforseva.in',
+				description: 'Building student hostels for boys aged 10–18 providing education from primary to high school.'
 			},
 			{
-				name: 'SafeHaven Homes',
-				grant: '$860K',
-				url: 'https://safehaven.org',
-				description: 'Shelter, care, and counselling for orphaned and at-risk children.'
+				name: 'Udayan Care',
+				url: 'https://udayancare.org',
+				description: 'Empowering vulnerable children and youth through family-based care and education.'
 			},
 			{
-				name: 'Nourish Kids',
-				grant: '$540K',
-				url: 'https://nourishkids.org',
-				description: 'Daily school meals that fight childhood hunger and keep kids in class.'
-			},
-			{
-				name: 'FamilyFirst Network',
-				grant: '$410K',
-				url: 'https://familyfirst.org',
-				description: 'Support services that keep vulnerable families together and stable.'
-			},
-			{
-				name: 'Cradle Care Trust',
-				grant: '$320K',
-				url: 'https://cradlecare.org',
-				description: 'Neonatal care and parenting support for new and expecting mothers.'
-			},
-			{
-				name: 'Playgrounds for All',
-				grant: '$190K',
-				url: 'https://playgroundsforall.org',
-				description: 'Safe, inclusive play spaces built in low-income neighbourhoods.'
+				name: 'Sai Dham Food Bank',
+				url: '#',
+				description: 'Providing nutritious meals and food support to families and children in need.'
 			}
 		]
 	},
@@ -344,52 +289,24 @@ export const partnerCategories = [
 			'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1100&q=80',
 		organizations: [
 			{
-				name: 'Meridian Health',
-				grant: '$2.3M',
-				url: 'https://meridianhealth.org',
-				description: 'Mobile medical units delivering primary care to remote, hard-to-reach villages.'
+				name: 'Trillium Health Partners',
+				url: 'https://trilliumhealthpartners.ca',
+				description: 'One of the largest community-based hospital networks in Canada, serving Mississauga and surrounding areas.'
 			},
 			{
-				name: 'CareFirst',
-				grant: '$1.5M',
-				url: 'https://carefirst.org',
-				description: 'Maternal and child health programs that reduce preventable deaths.'
+				name: 'Operation Eyesight Universal',
+				url: 'https://operationeyesight.com',
+				description: 'Performing cataract operations in villages for poor and elderly farmers in India, restoring sight and dignity.'
 			},
 			{
-				name: 'VitalCare Clinics',
-				grant: '$980K',
-				url: 'https://vitalcare.org',
-				description: 'Permanent community health centres staffed and stocked year-round.'
+				name: 'Canada Red Cross',
+				url: 'https://redcross.ca',
+				description: 'Supporting disaster relief and community health programs across Canada and internationally.'
 			},
 			{
-				name: 'PulseAid',
-				grant: '$700K',
-				url: 'https://pulseaid.org',
-				description: 'Rapid vaccination drives and emergency response when disaster strikes.'
-			},
-			{
-				name: 'Mobile Medics',
-				grant: '$650K',
-				url: 'https://mobilemedics.org',
-				description: 'Doctors-on-wheels reaching communities far from the nearest hospital.'
-			},
-			{
-				name: 'Maternal Hope',
-				grant: '$480K',
-				url: 'https://maternalhope.org',
-				description: 'Safe-birth programs and prenatal care for expectant mothers.'
-			},
-			{
-				name: 'ClearSight Vision',
-				grant: '$300K',
-				url: 'https://clearsight.org',
-				description: 'Free eye screenings and cataract surgeries that restore sight.'
-			},
-			{
-				name: 'WellSpring Clinics',
-				grant: '$240K',
-				url: 'https://wellspring.org',
-				description: 'Affordable everyday care for chronic and routine health conditions.'
+				name: 'Creating Hopes',
+				url: '#',
+				description: 'Providing healthcare support and creating opportunities for underserved communities.'
 			}
 		]
 	}

@@ -32,50 +32,34 @@
 	</div>
 </section>
 
-<!-- Featured story -->
-<section class="py-14 sm:py-20">
-	<div class="mx-auto grid max-w-6xl items-center gap-12 px-5 sm:px-6 lg:grid-cols-2 lg:px-8">
-		<div use:reveal class="reveal overflow-hidden rounded-2xl shadow-card">
-			<img src={stories[0].image} alt={stories[0].name} class="aspect-[4/3] w-full object-cover" loading="lazy" />
-		</div>
-		<div use:reveal class="reveal flex flex-col gap-4">
-			<span class="flex items-center gap-2 text-sm text-muted-foreground">
-				<MapPin class="size-4 text-primary" />{stories[0].location}
-			</span>
-			<h2 class="text-3xl leading-tight sm:text-4xl">{stories[0].name}</h2>
-			<p class="text-muted-foreground">{stories[0].excerpt}</p>
-			<p class="text-muted-foreground">
-				When a single scholarship became a teaching degree, the impact didn’t stop with one person —
-				it multiplied across an entire generation of students who now have a teacher who understands
-				exactly where they come from.
-			</p>
-			<div>
-				<Button href="/contact" variant="outline">Help fund more stories <ArrowRight class="size-4" /></Button>
-			</div>
-		</div>
-	</div>
-</section>
-
-<!-- Story grid -->
-<section class="bg-muted/50 py-14 sm:py-20">
+<!-- Stories — alternating left/right blocks -->
+<section class="py-16 sm:py-24">
 	<div class="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
-		<div class="grid gap-6 md:grid-cols-3">
-			{#each stories as story (story.slug)}
-				<article use:reveal class="reveal flex flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-soft transition-shadow hover:shadow-card">
-					<div class="relative h-52 overflow-hidden">
-						<img src={story.image} alt={story.name} class="size-full object-cover" loading="lazy" />
-						<span class="absolute top-4 left-4 rounded-full bg-card/90 px-3 py-1 text-xs font-semibold text-primary backdrop-blur">
-							{story.category}
-						</span>
+		<div class="flex flex-col gap-20 lg:gap-28">
+			{#each stories as story, i (story.slug)}
+				<div class="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+					<!-- Image -->
+					<div use:reveal class={`reveal ${i % 2 === 1 ? 'lg:order-2' : ''}`}>
+						<div class="relative overflow-hidden rounded-2xl shadow-card">
+							<img src={story.image} alt={story.name} class="aspect-[4/3] w-full object-cover" loading="lazy" />
+							<span class="absolute top-4 left-4 rounded-full bg-card/90 px-3.5 py-1.5 text-xs font-semibold tracking-wide text-primary shadow-soft backdrop-blur">
+								{story.category}
+							</span>
+						</div>
 					</div>
-					<div class="flex flex-1 flex-col gap-2 p-6">
-						<span class="flex items-center gap-1.5 text-xs text-muted-foreground">
-							<MapPin class="size-3.5" />{story.location}
+
+					<!-- Text -->
+					<div use:reveal class="reveal flex flex-col gap-4">
+						<span class="flex items-center gap-2 text-sm text-muted-foreground">
+							<MapPin class="size-4 text-primary" />{story.location}
 						</span>
-						<h3 class="text-xl">{story.name}</h3>
-						<p class="text-sm text-muted-foreground">{story.excerpt}</p>
+						<h2 class="text-3xl leading-tight sm:text-4xl">{story.name}</h2>
+						<p class="text-muted-foreground">{story.excerpt}</p>
+						<div>
+							<Button href="/contact" variant="outline">Help fund more stories <ArrowRight class="size-4" /></Button>
+						</div>
 					</div>
-				</article>
+				</div>
 			{/each}
 		</div>
 	</div>

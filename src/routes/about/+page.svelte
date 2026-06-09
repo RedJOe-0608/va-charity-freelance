@@ -3,7 +3,7 @@
 	import PageHeader from '$lib/components/ui/page-header.svelte';
 	import SectionHeading from '$lib/components/ui/section-heading.svelte';
 	import { reveal } from '$lib/actions/reveal.js';
-	import { site, values, team, milestones, founderStory } from '$lib/data/site.js';
+	import { site, values, foundingDirectors, boardOfDirectors, milestones, founderStory } from '$lib/data/site.js';
 
 	const icons = { users: Users, eye: Eye, infinity: InfinityIcon };
 </script>
@@ -38,9 +38,6 @@
 								class="aspect-[4/3] w-full object-cover"
 								loading="lazy"
 							/>
-							<span class="absolute top-4 left-4 rounded-full bg-card/90 px-3.5 py-1.5 text-xs font-semibold tracking-wide text-primary shadow-soft backdrop-blur">
-								{block.year}
-							</span>
 						</div>
 					</div>
 
@@ -113,23 +110,18 @@
 	</div>
 </section>
 
-<!-- Team -->
+<!-- Founding Directors -->
 <section class="py-16 sm:py-24">
 	<div class="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
-		<SectionHeading eyebrow="Our people" title="Meet the team" subtitle="A small, dedicated group working alongside dozens of local partners." />
-		<div class="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-			{#each team as member (member.name)}
-				<div use:reveal class="reveal group flex flex-col gap-4 text-center">
-					<div class="overflow-hidden rounded-2xl">
-						<img
-							src={member.image}
-							alt={member.name}
-							class="aspect-square w-full object-cover transition-transform duration-500 group-hover:scale-105"
-							loading="lazy"
-						/>
-					</div>
+		<SectionHeading eyebrow="Our founders" title="Founding Directors" subtitle="The visionaries who established the Vijay Anand Foundation in 1995." />
+		<div class="mt-14 grid gap-6 md:grid-cols-3">
+			{#each foundingDirectors as member (member.name)}
+				<div use:reveal class="reveal flex flex-col items-center gap-4 rounded-2xl border border-border bg-card p-8 text-center shadow-soft transition-all hover:-translate-y-0.5 hover:shadow-card">
+					<span class="grid size-20 place-items-center rounded-full bg-primary text-2xl font-bold text-primary-foreground">
+						{member.name.split(' ').map(w => w[0]).join('')}
+					</span>
 					<div>
-						<h3 class="text-lg">{member.name}</h3>
+						<h3 class="text-xl">{member.name}</h3>
 						<p class="text-sm text-muted-foreground">{member.role}</p>
 					</div>
 				</div>
@@ -137,3 +129,24 @@
 		</div>
 	</div>
 </section>
+
+<!-- Board of Directors -->
+<section class="bg-muted/50 py-16 sm:py-24">
+	<div class="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
+		<SectionHeading eyebrow="Leadership" title="Board of Directors" subtitle="Guiding our mission and ensuring accountability." />
+		<div class="mt-14 grid gap-6 md:grid-cols-3">
+			{#each boardOfDirectors as member (member.name)}
+				<div use:reveal class="reveal flex flex-col items-center gap-4 rounded-2xl border border-border bg-card p-8 text-center shadow-soft transition-all hover:-translate-y-0.5 hover:shadow-card">
+					<span class="grid size-20 place-items-center rounded-full bg-secondary text-2xl font-bold text-primary">
+						{member.name.split(' ').map(w => w[0]).join('')}
+					</span>
+					<div>
+						<h3 class="text-xl">{member.name}</h3>
+						<p class="text-sm text-muted-foreground">{member.role}</p>
+					</div>
+				</div>
+			{/each}
+		</div>
+	</div>
+</section>
+

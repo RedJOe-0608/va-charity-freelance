@@ -6,10 +6,8 @@
 		Baby,
 		Quote,
 		ShieldCheck,
-		Smile,
-		Receipt,
-		Users,
-		Sparkles
+		Mail,
+		MapPin
 	} from '@lucide/svelte';
 	import { Button } from '$lib/components/ui/button/index.js';
 	import SectionHeading from '$lib/components/ui/section-heading.svelte';
@@ -24,28 +22,15 @@
 		'graduation-cap': GraduationCap
 	};
 
-	const whyDonate = [
-		{
-			icon: Smile,
-			title: 'Personal wellbeing',
-			body: 'Giving boosts happiness, lowers stress, and brings a deeper sense of purpose and gratitude.'
-		},
-		{
-			icon: Receipt,
-			title: 'Tax benefits',
-			body: 'Donations to registered Canadian charities can earn valuable tax credits — and gifts of certain investments offer more.'
-		},
-		{
-			icon: Users,
-			title: 'Community impact',
-			body: 'Your support funds essential programs, helps those in need, and strengthens whole communities.'
-		},
-		{
-			icon: Sparkles,
-			title: 'Inspiring others',
-			body: 'Generosity is contagious — your gift encourages family and friends to give back too.'
-		}
-	];
+	// Map a partner's focus area to a fallback icon when no brand mark is available.
+	const kindIcons = {
+		Education: GraduationCap,
+		Childcare: Baby,
+		Healthcare: HeartPulse
+	};
+
+	// Pull the partner's real brand mark (favicon) from the web by domain.
+	const faviconFor = (domain) => `https://www.google.com/s2/favicons?domain=${domain}&sz=128`;
 </script>
 
 <svelte:head>
@@ -62,7 +47,7 @@
 		<div class="flex flex-col gap-7">
 			<span class="inline-flex w-fit items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-semibold tracking-wide">
 				<span class="size-2 rounded-full bg-primary-bright"></span>
-				Empowering communities since 2011
+				Empowering communities since 1995
 			</span>
 			<h1 class="font-display text-4xl leading-[1.05] font-semibold sm:text-5xl lg:text-6xl">
 				Small acts, <span class="text-accent">lasting</span> change.
@@ -77,7 +62,7 @@
 
 			<div class="mt-4 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-brand-deep-foreground/70">
 				<span class="flex items-center gap-2"><ShieldCheck class="size-4 text-primary-bright" /> 100% transparent</span>
-				<span class="flex items-center gap-2"><HeartPulse class="size-4 text-primary-bright" /> 52K+ lives reached</span>
+				<span class="flex items-center gap-2"><HeartPulse class="size-4 text-primary-bright" /> 22K+ lives reached</span>
 			</div>
 		</div>
 
@@ -91,7 +76,7 @@
 				/>
 			</div>
 			<div class="absolute -bottom-6 -left-6 hidden rounded-2xl border border-border bg-card p-5 shadow-card sm:block">
-				<p class="font-display text-3xl font-semibold text-primary">$14.6M</p>
+				<p class="font-display text-3xl font-semibold text-primary">$10M</p>
 				<p class="text-sm text-muted-foreground">deployed to local partners</p>
 			</div>
 		</div>
@@ -136,12 +121,12 @@
 			<h2 class="text-3xl leading-tight sm:text-4xl">
 				We back the people closest to the problem.
 			</h2>
-			<p class="text-muted-foreground">
+			<p class="leading-relaxed text-muted-foreground">
 				Vijay Anand Foundation is a community-first charity. Instead of imposing outside plans, we fund and
 				follow the lead of local organizations who understand their neighbors — then we stay for the
 				long haul.
 			</p>
-			<p class="text-muted-foreground">
+			<p class="leading-relaxed text-muted-foreground">
 				Every program is measured, reported, and built to outlast a single grant. That’s how a
 				donation becomes a school that still stands in twenty years.
 			</p>
@@ -207,7 +192,7 @@
 			<Button href="/impact" variant="ghost" class="shrink-0">All stories <ArrowRight class="size-4" /></Button>
 		</div>
 		<div class="mt-12 grid gap-6 md:grid-cols-3">
-			{#each stories.slice(0, 3) as story (story.slug)}
+			{#each stories as story (story.slug)}
 				<article use:reveal class="reveal group relative overflow-hidden rounded-2xl shadow-soft">
 					<img
 						src={story.image}
@@ -226,43 +211,20 @@
 				</article>
 			{/each}
 		</div>
-	</div>
-</section>
-
-<!-- Why donate -->
-<section class="bg-muted/50 py-16 sm:py-24">
-	<div class="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
-		<SectionHeading
-			eyebrow="Why give"
-			title="Why donate to charity?"
-			subtitle="Generosity gives back. Donating to a cause you believe in benefits you, your community, and the people you’ll never meet."
-		/>
-		<div class="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-			{#each whyDonate as item (item.title)}
-				{@const Icon = item.icon}
-				<div use:reveal class="reveal flex flex-col gap-4 rounded-2xl border border-border bg-card p-7 shadow-soft transition-all hover:-translate-y-0.5 hover:shadow-card">
-					<span class="grid size-12 place-items-center rounded-xl bg-secondary text-primary">
-						<Icon class="size-6" />
-					</span>
-					<h3 class="text-lg">{item.title}</h3>
-					<p class="text-sm leading-relaxed text-muted-foreground">{item.body}</p>
-				</div>
-			{/each}
-		</div>
 		<div class="mt-10 flex justify-center">
-			<Button href="/contact" size="lg">Contact us <ArrowRight class="size-4" /></Button>
+			<Button href="/contact" size="lg">Get in touch <ArrowRight class="size-4" /></Button>
 		</div>
 	</div>
 </section>
 
 <!-- Testimonial -->
 <section class="bg-secondary py-16 sm:py-24">
-	<div class="mx-auto max-w-3xl px-5 text-center sm:px-6 lg:px-8">
+	<div use:reveal class="reveal mx-auto max-w-3xl px-5 text-center sm:px-6 lg:px-8">
 		<Quote class="mx-auto size-10 text-primary/30" />
 		<blockquote class="mt-6 font-display text-2xl leading-relaxed text-foreground sm:text-3xl">
 			“{testimonials[0].quote}”
 		</blockquote>
-		<div class="mt-6">
+		<div class="mt-8">
 			<p class="font-semibold">{testimonials[0].name}</p>
 			<p class="text-sm text-muted-foreground">{testimonials[0].role}</p>
 		</div>
@@ -272,28 +234,34 @@
 <!-- Partners strip -->
 <section class="bg-brand-deep text-brand-deep-foreground">
 	<!-- Infinite marquee: hovering a partner pauses the whole strip -->
-	<div class="marquee group pt-6 pb-14 sm:pt-8 sm:pb-16">
+	<div class="marquee group pt-8 pb-12 sm:pt-10 sm:pb-16">
 		<ul class="marquee__track">
 			{#each [...partners, ...partners] as partner, i (i)}
 				<li>
 					<a
 						href={partner.url ?? '#'}
 						aria-label={partner.name}
-						class="flex h-12 items-center justify-center px-10 sm:px-14"
+						class="group/partner flex h-16 items-center gap-4 px-8 sm:px-10"
 					>
-						{#if partner.logo}
+						{#if partner.domain}
 							<img
-								src={partner.logo}
-								alt={partner.name}
-								class="h-6 w-auto opacity-60 brightness-0 invert transition duration-300 hover:opacity-100 sm:h-7"
+								src={faviconFor(partner.domain)}
+								alt=""
+								aria-hidden="true"
+								class="size-10 shrink-0 rounded-lg bg-white object-contain p-1.5 shadow-soft"
+								loading="lazy"
 							/>
 						{:else}
-							<span
-								class="font-display text-lg font-semibold whitespace-nowrap text-brand-deep-foreground/60 transition-colors hover:text-brand-deep-foreground"
-							>
-								{partner.name}
+							{@const Icon = kindIcons[partner.kind]}
+							<span class="grid size-10 shrink-0 place-items-center rounded-lg bg-white/10 text-brand-deep-foreground/70">
+								<Icon class="size-5" />
 							</span>
 						{/if}
+						<span
+							class="font-display text-xl font-semibold whitespace-nowrap text-brand-deep-foreground/60 transition-colors group-hover/partner:text-brand-deep-foreground sm:text-2xl"
+						>
+							{partner.name}
+						</span>
 					</a>
 				</li>
 			{/each}

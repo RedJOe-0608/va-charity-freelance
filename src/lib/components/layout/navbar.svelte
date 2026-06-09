@@ -41,13 +41,13 @@
 		</a>
 
 		<!-- Desktop nav -->
-		<ul class="hidden items-center gap-1 md:flex">
+		<ul class="hidden items-center gap-1.5 md:flex">
 			{#each navLinks as link (link.href)}
 				<li>
 					<a
 						href={link.href}
 						class={cn(
-							'rounded-full px-3.5 py-2 text-sm font-medium transition-colors',
+							'rounded-full px-4 py-2.5 text-[15px] font-medium transition-colors',
 							isActive(link.href)
 								? scrolled
 									? 'text-primary'
@@ -64,7 +64,7 @@
 		</ul>
 
 		<div class="flex items-center gap-2">
-			<Button href="/contact" size="sm" class="hidden md:inline-flex">Contact Us</Button>
+			<Button href="/contact" class="hidden md:inline-flex">Contact Us</Button>
 
 			<!-- Mobile menu -->
 			<Dialog.Root bind:open={mobileOpen}>
