@@ -50,7 +50,7 @@
 	subtitle="Donate, partner, volunteer, or just say hello. We read every message and respond within two business days."
 />
 
-<section class="py-14 sm:py-20">
+<section class="bg-card py-14 sm:py-20">
 	<div class="mx-auto grid max-w-6xl gap-12 px-5 sm:px-6 lg:grid-cols-[1fr_1.2fr] lg:px-8">
 		<!-- Details -->
 		<div class="flex flex-col gap-4">
@@ -151,7 +151,7 @@
 </section>
 
 <!-- FAQ -->
-<section class="bg-muted/50 py-16 sm:py-24">
+<section class="bg-secondary py-16 sm:py-24">
 	<div class="mx-auto max-w-3xl px-5 sm:px-6 lg:px-8">
 		<div class="mb-12 text-center">
 			<span class="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] text-primary uppercase"><span class="h-px w-6 bg-current opacity-50"></span>FAQ</span>

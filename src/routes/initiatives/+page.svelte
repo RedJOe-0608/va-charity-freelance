@@ -22,7 +22,7 @@
 	subtitle="We focus our funding on three interconnected areas — the foundations every thriving community is built on."
 />
 
-<div class="divide-y divide-border">
+<div class="bg-card">
 	{#each initiatives as item, i (item.slug)}
 		{@const Icon = icons[item.icon]}
 		<section class="py-14 sm:py-20">

@@ -39,30 +39,30 @@
 </svelte:head>
 
 <!-- Hero -->
-<section class="relative overflow-hidden bg-brand-deep text-brand-deep-foreground">
-	<div class="pointer-events-none absolute -top-32 right-0 size-[28rem] rounded-full bg-primary/40 blur-3xl"></div>
-	<div class="pointer-events-none absolute bottom-0 -left-24 size-96 rounded-full bg-accent/15 blur-3xl"></div>
+<section class="relative overflow-hidden bg-background text-foreground">
+	<div class="pointer-events-none absolute -top-32 right-0 size-[28rem] rounded-full bg-primary/15 blur-3xl"></div>
+	<div class="pointer-events-none absolute bottom-0 -left-24 size-96 rounded-full bg-accent/10 blur-3xl"></div>
 
 	<div class="relative mx-auto grid max-w-6xl items-center gap-12 px-5 pt-32 pb-20 sm:px-6 lg:grid-cols-2 lg:px-8 lg:pt-40 lg:pb-28">
 		<div class="flex flex-col gap-7">
-			<span class="inline-flex w-fit items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-semibold tracking-wide">
-				<span class="size-2 rounded-full bg-primary-bright"></span>
+			<span class="inline-flex w-fit items-center gap-2 rounded-full border border-border bg-secondary px-4 py-1.5 text-xs font-semibold tracking-wide text-secondary-foreground">
+				<span class="size-2 rounded-full bg-primary"></span>
 				Empowering communities since 1995
 			</span>
 			<h1 class="font-display text-4xl leading-[1.05] font-semibold sm:text-5xl lg:text-6xl">
-				Small acts, <span class="text-accent">lasting</span> change.
+				Small acts, <span class="text-primary">lasting</span> change.
 			</h1>
-			<p class="max-w-md text-lg text-brand-deep-foreground/75">
+			<p class="max-w-md text-lg text-muted-foreground">
 				{site.mission}
 			</p>
 			<div class="flex flex-wrap gap-3">
-				<Button href="/contact" variant="accent" size="lg">Contact us <ArrowRight class="size-4" /></Button>
-				<Button href="/about" variant="deep-outline" size="lg">Learn our story</Button>
+				<Button href="/contact" size="lg">Contact Us <ArrowRight class="size-4" /></Button>
+				<Button href="/about" variant="outline" size="lg">Learn our story</Button>
 			</div>
 
-			<div class="mt-4 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-brand-deep-foreground/70">
-				<span class="flex items-center gap-2"><ShieldCheck class="size-4 text-primary-bright" /> 100% transparent</span>
-				<span class="flex items-center gap-2"><HeartPulse class="size-4 text-primary-bright" /> 22K+ lives reached</span>
+			<div class="mt-4 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-muted-foreground">
+				<span class="flex items-center gap-2"><ShieldCheck class="size-4 text-primary" /> 100% transparent</span>
+				<span class="flex items-center gap-2"><HeartPulse class="size-4 text-primary" /> 22K+ lives reached</span>
 			</div>
 		</div>
 
@@ -86,7 +86,7 @@
 </section>
 
 <!-- Stats -->
-<section class="border-b border-border bg-card">
+<section class="bg-card">
 	<div class="mx-auto grid max-w-6xl grid-cols-2 gap-px overflow-hidden px-5 py-12 sm:px-6 lg:grid-cols-4 lg:px-8">
 		{#each stats as stat (stat.label)}
 			<div class="flex flex-col items-center gap-1 px-4 py-4 text-center">
@@ -138,7 +138,7 @@
 </section>
 
 <!-- Initiatives -->
-<section class="bg-muted/50 py-16 sm:py-24">
+<section class="bg-secondary py-16 sm:py-24">
 	<div class="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
 		<SectionHeading
 			eyebrow="Our initiatives"

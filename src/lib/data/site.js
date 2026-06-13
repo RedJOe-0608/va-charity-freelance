@@ -136,16 +136,19 @@ export const values = [
 	}
 ];
 
+// `image` holds a professional portrait for each director — swap these stock photos for real headshots.
+const portrait = (id) => `https://images.unsplash.com/${id}?auto=format&fit=crop&crop=faces&w=400&h=400&q=80`;
+
 export const foundingDirectors = [
-	{ name: 'Anand Jain', role: 'Founding Director' },
-	{ name: 'Vijay Jain', role: 'Founding Director' },
-	{ name: 'Neeraj Jain', role: 'Founding Director' }
+	{ name: 'Anand Jain', role: 'Founding Director', image: portrait('photo-1507003211169-0a1dd7228f2d') },
+	{ name: 'Vijay Jain', role: 'Founding Director', image: portrait('photo-1500648767791-00dcc994a43e') },
+	{ name: 'Neeraj Jain', role: 'Founding Director', image: portrait('photo-1519085360753-af0119f7cbe7') }
 ];
 
 export const boardOfDirectors = [
-	{ name: 'Anuj Jain', role: 'Board Director' },
-	{ name: 'Nitin Jain', role: 'Board Director' },
-	{ name: 'Rakesh Gupta', role: 'Board Director' }
+	{ name: 'Anuj Jain', role: 'Director', image: portrait('photo-1472099645785-5658abf4ff4e') },
+	{ name: 'Nitin Jain', role: 'Director', image: portrait('photo-1488161628813-04466f872be2') },
+	{ name: 'Rakesh Gupta', role: 'Director', image: portrait('photo-1506794778202-cad84cf45f1d') }
 ];
 
 export const milestones = [

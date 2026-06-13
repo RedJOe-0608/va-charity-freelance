@@ -46,7 +46,7 @@
 />
 
 <!-- Organizations we work with — by category -->
-<section class="py-14 sm:py-20">
+<section class="bg-card py-14 sm:py-20">
 	<div class="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
 		<SectionHeading
 			eyebrow="Organizations we work with"
@@ -112,7 +112,7 @@
 </section>
 
 <!-- Ways to partner -->
-<section class="bg-muted/50 py-16 sm:py-24">
+<section class="bg-secondary py-16 sm:py-24">
 	<div class="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
 		<SectionHeading eyebrow="Get involved" title="Ways to partner with us" />
 		<div class="mt-14 grid gap-6 md:grid-cols-3">

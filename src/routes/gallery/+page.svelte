@@ -27,7 +27,7 @@
 	subtitle="Every photograph is a real community, a real program, a real life changed. Tap any image to view it larger."
 />
 
-<section class="py-14 sm:py-20">
+<section class="bg-card py-14 sm:py-20">
 	<div class="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
 		<div class="grid auto-rows-[180px] grid-cols-2 gap-4 sm:grid-cols-3">
 			{#each gallery as src, i (src + i)}

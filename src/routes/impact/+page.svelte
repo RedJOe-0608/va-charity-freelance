@@ -15,11 +15,10 @@
 <PageHeader
 	title="In their own words"
 	subtitle="Numbers tell part of the story. These are the people behind them — the families, students, and neighbors your support reaches every day."
-	curveFill="var(--card)"
 />
 
 <!-- Stats recap -->
-<section class="border-b border-border bg-card py-12">
+<section class="bg-card py-12">
 	<div class="mx-auto grid max-w-6xl grid-cols-2 gap-8 px-5 sm:px-6 lg:grid-cols-4 lg:px-8">
 		{#each stats as stat (stat.label)}
 			<div class="text-center">

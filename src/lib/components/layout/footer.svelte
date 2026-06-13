@@ -1,6 +1,7 @@
 <script>
-	import { Heart, Mail, MapPin, Camera, Globe, Briefcase, Video, ArrowRight, ArrowUpRight } from '@lucide/svelte';
+	import { Mail, MapPin, Camera, Globe, Briefcase, Video, ArrowRight, ArrowUpRight } from '@lucide/svelte';
 	import { Button } from '$lib/components/ui/button/index.js';
+	import Logo from './logo.svelte';
 	import { site, navLinks } from '$lib/data/site.js';
 
 	// lucide removed brand logos; map social channels to generic icons.
@@ -8,7 +9,8 @@
 </script>
 
 <footer class="bg-brand-deep text-brand-deep-foreground">
-	<!-- Contact band (common to every page) -->
+	<!-- Contact band (common to every page) — commented out; the homepage Partners
+	     strip now flows directly into the footer nav as one continuous navy block.
 	<div id="contact" class="border-b border-white/10">
 		<div class="mx-auto grid max-w-6xl gap-10 px-5 py-16 sm:px-6 lg:grid-cols-2 lg:px-8 lg:py-20">
 			<div class="flex flex-col gap-5">
@@ -50,15 +52,13 @@
 			</div>
 		</div>
 	</div>
+	-->
 
 	<!-- Footer nav -->
 	<div class="mx-auto grid max-w-6xl gap-10 px-5 py-14 sm:px-6 lg:grid-cols-[1.5fr_1fr_1fr] lg:px-8">
 		<div class="flex flex-col gap-4">
-			<a href="/" class="flex items-center gap-2.5 font-display text-lg font-semibold">
-				<span class="grid size-9 place-items-center rounded-full bg-primary-bright text-accent-foreground">
-					<Heart class="size-4.5" fill="currentColor" />
-				</span>
-				{site.name}
+			<a href="/" class="flex w-fit items-center" aria-label={site.name}>
+				<Logo tone="dark" />
 			</a>
 			<p class="max-w-xs text-sm text-brand-deep-foreground/65">{site.mission}</p>
 			<div class="mt-2 flex gap-2">

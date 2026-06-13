@@ -19,7 +19,7 @@
 />
 
 <!-- Founder's story — alternating left/right blocks -->
-<section class="py-16 sm:py-24">
+<section class="bg-card py-16 sm:py-24">
 	<div class="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
 		<div class="mb-16 text-center">
 			<span class="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] text-primary uppercase"><span class="h-px w-6 bg-current opacity-50"></span>Our story</span>
@@ -56,7 +56,7 @@
 </section>
 
 <!-- Mission / Vision -->
-<section class="bg-muted/50 py-16 sm:py-24">
+<section class="bg-secondary py-16 sm:py-24">
 	<div class="mx-auto grid max-w-6xl gap-6 px-5 sm:px-6 md:grid-cols-2 lg:px-8">
 		<div use:reveal class="reveal flex flex-col gap-3 rounded-2xl border border-border bg-card p-8 shadow-soft">
 			<h3 class="text-2xl text-primary">Our mission</h3>
@@ -110,36 +110,19 @@
 	</div>
 </section>
 
-<!-- Founding Directors -->
-<section class="py-16 sm:py-24">
-	<div class="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
-		<SectionHeading eyebrow="Our founders" title="Founding Directors" subtitle="The visionaries who established the Vijay Anand Foundation in 1995." />
-		<div class="mt-14 grid gap-6 md:grid-cols-3">
-			{#each foundingDirectors as member (member.name)}
-				<div use:reveal class="reveal flex flex-col items-center gap-4 rounded-2xl border border-border bg-card p-8 text-center shadow-soft transition-all hover:-translate-y-0.5 hover:shadow-card">
-					<span class="grid size-20 place-items-center rounded-full bg-primary text-2xl font-bold text-primary-foreground">
-						{member.name.split(' ').map(w => w[0]).join('')}
-					</span>
-					<div>
-						<h3 class="text-xl">{member.name}</h3>
-						<p class="text-sm text-muted-foreground">{member.role}</p>
-					</div>
-				</div>
-			{/each}
-		</div>
-	</div>
-</section>
-
 <!-- Board of Directors -->
-<section class="bg-muted/50 py-16 sm:py-24">
+<section class="bg-secondary py-16 sm:py-24">
 	<div class="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
 		<SectionHeading eyebrow="Leadership" title="Board of Directors" subtitle="Guiding our mission and ensuring accountability." />
 		<div class="mt-14 grid gap-6 md:grid-cols-3">
-			{#each boardOfDirectors as member (member.name)}
-				<div use:reveal class="reveal flex flex-col items-center gap-4 rounded-2xl border border-border bg-card p-8 text-center shadow-soft transition-all hover:-translate-y-0.5 hover:shadow-card">
-					<span class="grid size-20 place-items-center rounded-full bg-secondary text-2xl font-bold text-primary">
-						{member.name.split(' ').map(w => w[0]).join('')}
-					</span>
+			{#each [...foundingDirectors, ...boardOfDirectors] as member (member.name)}
+				<div use:reveal class="reveal flex aspect-square flex-col items-center justify-center gap-5 rounded-2xl border border-border bg-card p-8 text-center shadow-soft transition-all hover:-translate-y-0.5 hover:shadow-card">
+					<img
+						src={member.image}
+						alt={member.name}
+						class="size-40 rounded-full object-cover shadow-soft"
+						loading="lazy"
+					/>
 					<div>
 						<h3 class="text-xl">{member.name}</h3>
 						<p class="text-sm text-muted-foreground">{member.role}</p>
